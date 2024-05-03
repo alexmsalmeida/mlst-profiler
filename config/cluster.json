@@ -1,6 +1,8 @@
 {
  "__default__": {
   "jobname": "{rule}.{wildcards}",
+  "cores": 4,
+  "mem": 20000,
   "queue": "icelake-himem",
   "project": "ALMEIDA-SL3-CPU",
   "time": "12:00:00",

@@ -22,7 +22,7 @@ git clone https://github.com/alexmsalmeida/mlst-profiler.git
 
 2. Run the pipeline on a cluster (e.g., SLURM)
 ```
-snakemake --use-conda -k -j 25 --profile config/slurm --latency-wait 60
+snakemake --use-conda -k -j 100 --profile config/slurm --latency-wait 60
 ```
 
 3. Output MLST files will be stored in the specified output directory. If there is only a `done.txt` file in the output, it means no confident ST profiles were detected.

@@ -47,7 +47,7 @@ rule metamlst_sample:
     input:
         OUTPUT+"/{sample}/{sample}.bam"
     output:
-        bai = temp(OUTPUT+"/{sample}/{sample}.bai"),
+        bai = temp(OUTPUT+"/{sample}/{sample}.bam.bai"),
         outfile = OUTPUT+"/{sample}/mlst_check.txt"
     params:
         mlst_script = METAMLST_DIR+"/metamlst.py",
