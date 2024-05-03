@@ -1,0 +1,7 @@
+# Parameters for snakemake run
+
+input_file: "/rds/user/aa2369/hpc-work/scripts/snakemake/mlst-profiler/test/input.tsv" # Input TSV file with list of paired-end FASTQ files (1st column forward path, 2nd column reverse path)
+
+output_dir: "/rds/user/aa2369/hpc-work/scripts/snakemake/mlst-profiler/test" # Output directory to store MLST results
+
+metamlst_dir: "/rds/project/rds-aFEMMKDjWlo/software/metamlst" # Directory where metamlst is installed

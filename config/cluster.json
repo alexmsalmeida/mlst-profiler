@@ -1,0 +1,13 @@
+{
+ "__default__": {
+  "jobname": "{rule}.{wildcards}",
+  "queue": "icelake-himem",
+  "project": "ALMEIDA-SL3-CPU",
+  "time": "12:00:00",
+  "outfile": "{OUTPUT}/{wildcards.sample}/logs/{rule}.log"
+ },
+ "bowtie2": {
+  "cores": 8,
+  "mem": 40000
+ }
+}
