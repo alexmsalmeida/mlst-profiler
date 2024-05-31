@@ -47,7 +47,6 @@ rule metamlst_sample:
     input:
         OUTPUT+"/{sample}/{sample}.bam"
     output:
-        bai = temp(OUTPUT+"/{sample}/{sample}.bam.bai"),
         outfile = OUTPUT+"/{sample}/mlst_check.txt"
     params:
         mlst_script = METAMLST_DIR+"/metamlst.py",
@@ -56,7 +55,7 @@ rule metamlst_sample:
         "config/envs/metamlst.yml"
     shell:
         """
-        python {params.mlst_script} -o {params.outfolder} {input}
+        python {params.mlst_script} --min_accuracy 0.5 -o {params.outfolder} {input}
         touch {output.outfile}
         """
 
@@ -72,6 +71,7 @@ rule metamlst_merge:
         "config/envs/metamlst.yml"
     shell:
         """
-        python {params.mlst_script} {params.nfo}
+        python {params.mlst_script} -z 10 {params.nfo}
+        rm -f {params.nfo}*.bam.bai
         touch {output}
         """
